@@ -17,3 +17,7 @@
 #status {
     font-size: 22px;
 }
+
+h4 {
+    position: sticky;
+}
