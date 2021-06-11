@@ -23,7 +23,7 @@ var ball = {
 }
 
 function restartGame() {
-  location.reload();
+  location.reload(true);
 }
 
 function setup() {
@@ -48,15 +48,16 @@ function draw() {
 
   //left paddle
   fill(250, 0, 0);
-  stroke(0, 0, 250);
-  strokeWeight(0.5);
+  stroke("#FFA500");
+  strokeWeight(1);
   paddle1Y = mouseY;
   rect(paddle1X, paddle1Y, paddle1, paddle1Height, 100);
 
 
   //pc computer paddle
   fill("#FFA500");
-  stroke("#FFA500");
+  stroke(250, 0, 0);
+  strokeWeight(1);
   var paddle2y = ball.y - paddle2Height / 2;
   rect(paddle2Y, paddle2y, paddle2, paddle2Height, 100);
 
@@ -78,7 +79,7 @@ function draw() {
 //function reset when ball does notcame in the contact of padde
 function reset() {
   ball.x = width / 2 + 100,
-  ball.y = height / 2 + 100;
+    ball.y = height / 2 + 100;
   ball.dx = 3;
   ball.dy = 3;
 
