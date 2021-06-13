@@ -1,3 +1,8 @@
+leftWristX = 0;
+leftWristY = 0;
+rightWristX = 0;
+rightWristY = 0;
+
 var paddle2 = 10,
   paddle1 = 10;
 
@@ -29,7 +34,20 @@ function restartGame() {
 function setup() {
   canvas = createCanvas(700, 600);
   canvas.parent('canvas');
+
+  video = createCapture(VIDEO);
+  video.size(800, 400);
+  video.parent('game_console');
+
+  poseNet = ml5.poseNet(video, modelLoaded);
+  poseNet.on('pose', gotPoses);
 }
+
+function modelLoaded() {
+  console.log("Model is loaded!");
+}
+
+function gotPoses(results) {}
 
 function draw() {
 
